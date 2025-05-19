@@ -1,59 +1,75 @@
-# RPLMQoS_BELACEL - Installation and Usage
+# RPLMQoS_BELACEL
 
-This project is an implementation of RPL with MQoS (Multi-path Quality of Service) support for Contiki-NG.
+**Author:** BELACEL Madani
 
- Prerequisites
+---
 
-- Ubuntu (tested on Ubuntu 20.04 LTS and later versions)
-- Internet connection
-- Administrator rights (sudo)
+## Project Overview
 
- Automatic Installation
+RPLMQoS_BELACEL is an implementation of the RPL routing protocol enhanced with Multi-path Quality of Service (MQoS) support, designed for Contiki-NG operating system to improve QoS in Low-Power and Lossy Networks (LLNs).
 
-The project includes an automatic installation script that configures the entire environment.
+---
 
-# Installation Steps
+## Prerequisites
 
-1. Copy the project
+- Ubuntu (tested on Ubuntu 20.04 LTS and later)  
+- Internet connection  
+- Administrator privileges (sudo)  
+
+---
+
+## Automatic Installation
+
+This project provides an automatic installation script to set up the entire environment quickly and easily.
+
+### Installation Steps
+
+1. Copy the project folder to your machine, for example, to your Desktop:
+
    ```bash
-   # Copy the RPLMQoS_BELACEL folder to your machine
-   # For example, to the desktop:
    cp -r RPLMQoS_BELACEL ~/Desktop/
    ```
 
-2. Run the installation script
+2. Run the installation script:
+
    ```bash
    cd ~/Desktop/RPLMQoS_BELACEL
    chmod +x install.sh
    ./install.sh
    ```
 
-The script will automatically:
-- Check prerequisites
-- Install system dependencies
-- Install Contiki-NG
-- Install MSP430 tools
-- Configure the project
-- Compile the project
+The script will perform the following tasks automatically:
 
-# Script Messages
+- Verify prerequisites  
+- Install required system dependencies  
+- Install Contiki-NG  
+- Install MSP430 tools  
+- Configure the project  
+- Compile the project  
 
-The script displays colored messages to track progress:
-- 🟢 [INFO] : Normal information messages
-- 🟡 [WARNING] : Warnings
-- 🔴 [ERROR] : Errors
+### Script Messages
 
- Manual Installation
+The script displays colored messages to indicate status:
 
-If you prefer to install manually, follow these steps:
+- 🟢 [INFO] : Informational messages  
+- 🟡 [WARNING] : Warnings to be aware of  
+- 🔴 [ERROR] : Errors encountered during installation  
 
-1. Install dependencies
+---
+
+## Manual Installation
+
+If you prefer manual installation, follow these steps:
+
+1. Install dependencies:
+
    ```bash
    sudo apt-get update
    sudo apt-get install -y build-essential git wget curl python3 python3-pip
    ```
 
-2. Install Contiki-NG
+2. Clone and set up Contiki-NG:
+
    ```bash
    cd ~
    git clone https://github.com/contiki-ng/contiki-ng.git
@@ -61,63 +77,70 @@ If you prefer to install manually, follow these steps:
    git submodule update --init --recursive
    ```
 
-3. Install MSP430 tools
+3. Install MSP430 tools:
+
    ```bash
    cd ~/contiki-ng/tools
    sudo ./install-msp430.sh
    ```
 
-4. Configure the project
+4. Configure the project:
+
    ```bash
-   # Copy the project to the examples folder
    cp -r RPLMQoS_BELACEL ~/contiki-ng/examples/
    cd ~/contiki-ng/examples/RPLMQoS_BELACEL
    ```
 
-5. Compile
+5. Compile the project:
+
    ```bash
    make TARGET=sky
    ```
 
- Project Structure
+---
+
+## Project Structure
 
 ```
 RPLMQoS_BELACEL/
 ├── install.sh           # Automatic installation script
-├── clean.sh            # Cleaning script
-├── Makefile            # Compilation configuration
-├── project-conf.h      # Project configuration
-├── sky-conf.h          # Sky platform configuration
-├── compilation_log.txt # Compilation log
-├── src/                # Source files
-├── include/            # Header files
-├── contiki_deps/       # Contiki dependencies
-├── tests/              # Test files
-└── figures/            # Project figures
+├── clean.sh             # Script to clean build files and temporary data
+├── Makefile             # Build configuration
+├── project-conf.h       # Project-specific configuration
+├── sky-conf.h           # Platform-specific configuration (Sky motes)
+├── compilation_log.txt  # Log file of the last compilation
+├── src/                 # Source code files
+├── include/             # Header files
+├── contiki_deps/        # Contiki dependencies
+├── tests/               # Test scripts and files
+└── figures/             # Project figures and diagrams
 ```
 
- Cleaning the Project
+---
 
-To clean the project and remove non-essential files:
+## Cleaning the Project
+
+To remove compiled files and clean the workspace, run:
+
 ```bash
 ./clean.sh
 ```
 
- Troubleshooting
+---
 
-If you encounter problems:
+## Troubleshooting
 
-1. Compilation errors
-   - Check the `compilation_log.txt` file
-   - Ensure Contiki-NG is properly installed
-   - Verify MSP430 tools are installed
+### Compilation Errors
 
-2. Permission errors
-   - Run the script as a normal user (not root)
-   - Check file permissions
+- Check the `compilation_log.txt` file for detailed error messages.  
+- Verify that Contiki-NG and MSP430 tools are correctly installed.  
 
-3. Dependency errors
-   - Verify all dependencies are installed
-   - Run `sudo apt-get update` before installation
+### Permission Issues
 
+- Avoid running scripts as root; use a normal user account.  
+- Ensure scripts have executable permissions (`chmod +x`).  
 
+### Dependency Issues
+
+- Make sure all required packages are installed.  
+- Run `sudo apt-get update` before starting installation.
