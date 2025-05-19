@@ -1,5 +1,3 @@
-# Auteur : BELACEL Madani | Author: BELACEL Madani
-
 # RPLMQoS_BELACEL - Installation and Usage
 
 This project is an implementation of RPL with MQoS (Multi-path Quality of Service) support for Contiki-NG.
