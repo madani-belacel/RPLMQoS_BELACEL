@@ -1,0 +1,80 @@
+==== CONTIKI-NG & COOJA BUILD FILES ====
+*.o
+*.elf
+*.a
+*.d
+*.out
+*.cooja
+*.exe
+obj/
+build/
+*.map
+*.hex
+*.bin
+
+==== COOJA LOGS ====
+*.log
+*.trace
+*.testlog
+
+==== SIMULATION FILES ====
+*.csc
+*.cex
+*.bak
+*.sav
+*.tmp
+
+==== JAVA/ECLIPSE/VS CODE ====
+.vscode/
+.classpath
+.project
+.settings/
+*.class
+
+==== LATEX FILES ====
+*.aux
+*.bbl
+*.blg
+*.brf
+*.log
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.toc
+*.nav
+*.snm
+*.out
+*.gz
+
+==== FIGURES & GENERATED IMAGES ====
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.svg
+*.eps
+
+==== SYSTEM & BACKUP FILES ====
+*.DS_Store
+Thumbs.db
+*~
+*.bak
+*.swp
+*.swo
+*.tmp
+
+==== PYTHON CACHE (if scripts exist) ====
+__pycache__/
+*.py[cod]
+*.egg-info/
+.env/
+.venv/
+
+==== ARCHIVES ====
+*.zip
+*.rar
+*.7z
+*.tar
+*.tar.gz
