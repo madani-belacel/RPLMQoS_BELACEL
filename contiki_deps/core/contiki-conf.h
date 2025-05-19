@@ -1,0 +1,48 @@
+/**
+ * \file
+ * Contiki-NG configuration header
+ * \author BELACEL Madani
+ * \date 2023
+ */
+
+#ifndef CONTIKI_CONF_H_
+#define CONTIKI_CONF_H_
+
+/* Platform configuration */
+#define PLATFORM_HAS_LEDS 1
+#define PLATFORM_HAS_BUTTON 1
+#define PLATFORM_HAS_SENSORS 1
+
+/* Network configuration */
+#define NETSTACK_CONF_WITH_IPV6 1
+#define NETSTACK_CONF_WITH_RPL 1
+#define NETSTACK_CONF_WITH_TSCH 1
+
+/* RPL configuration */
+#define RPL_CONF_OF rpl_mqos
+#define RPL_CONF_DEFAULT_INSTANCE 0
+#define RPL_CONF_DEFAULT_LIFETIME 60
+#define RPL_CONF_DEFAULT_ROUTE_INFINITE_LIFETIME 1
+
+/* TSCH configuration */
+#define TSCH_CONF_DEFAULT_HOPPING_SEQUENCE 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15
+#define TSCH_CONF_DEFAULT_CHANNEL_OFFSET 0
+#define TSCH_CONF_DEFAULT_EB_PERIOD (4 * CLOCK_SECOND)
+#define TSCH_CONF_DEFAULT_MAX_EB_PERIOD (60 * CLOCK_SECOND)
+
+/* Queue configuration */
+#define QUEUEBUF_CONF_NUM 16
+#define NBR_TABLE_CONF_MAX_NEIGHBORS 16
+#define UIP_CONF_MAX_ROUTES 16
+
+/* Logging configuration */
+#define LOG_CONF_LEVEL_RPL LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_MAC LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_FRAMER LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_6LOWPAN LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_TCPIP LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_IPV6 LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_6TOP LOG_LEVEL_DBG
+#define LOG_CONF_LEVEL_COAP LOG_LEVEL_DBG
+
+#endif /* CONTIKI_CONF_H_ */ 
